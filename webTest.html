@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .introduce {
+            text-align: center;
+        }
+        .picture {
+            text-align: center;
+        }
+        .save_button {
+            width: 300;
+            height: 150;
+            text-align: center;
+            background-color: brown;
+        }
+    </style>
+    <script>
+        // 标记保存的状态
+        var saved = false;
+        // 保存事件
+        function saveaction() {
+            if (saved) {
+                return;
+            }
+            alert("确定要保存该图片吗");
+            //发送消息给客户端js中发送消息给oc
+            // var param = {url : "http://127.0.0.1/webTest/images/picture-01"};
+            // window.webkit.messageHandlers.JSBridge.postMessage(JSON.stringify(param));
+        }
+
+        function testaction() {
+            
+            alert("测试alert");
+        }
+        
+    </script>
+</head>
+<body>
+
+    <!-- 介绍 -->
+    <div class="introduce">
+        知识小集是一个团队公众号,主要定位在移动开发领域,分享移动开发技术.
+    </div>
+
+    <!-- 图片 -->
+    <div class="picture">
+        <img src="images/picture-01.png" width="300" height="300">
+    </div>
+
+    <!-- 保存按钮 -->
+    <div id="saveid" class="save_button" onclick="saveaction()">保存到相册</div>
+
+    <!-- 测试按钮 -->
+    <div class="test_button" onclick="testaction()">测试Alert</div>
+</body>
+</html>
