@@ -28,14 +28,26 @@
                 return;
             }
             alert("确定要保存该图片吗");
+
             //发送消息给客户端js中发送消息给oc
-            // var param = {url : "http://127.0.0.1/webTest/images/picture-01"};
-            // window.webkit.messageHandlers.JSBridge.postMessage(JSON.stringify(param));
+            var param = {url : "https://blog-1256512148.cos.ap-beijing.myqcloud.com/iOS0002.png"};
+            //
+            window.webkit.messageHandlers.JSBridge.postMessage(JSON.stringify(param));
         }
 
         function testaction() {
             
             alert("测试alert");
+        }
+
+        function change_state(issaved) {
+            saved = issaved;
+            var button = document.getElementById('saveid');
+            if (issaved) {
+                button.innerText = "已保存";
+            }else {
+                button.innerText = "保存到相册";
+            }
         }
         
     </script>
